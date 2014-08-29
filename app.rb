@@ -6,16 +6,20 @@ require 'bundler'
 
 Bundler.require
 
+require './lib/FortuneCow.rb'
+
 before do
   content_type 'text/plain'
 end
 
 get '/think' do
-  cow = Cow.new()
-  body cow.say(params[:t] || "", 'think')
+  FortuneCow.think({ :text => params[:t] })
 end
 
 get '/say' do
- cow = Cow.new()
- body cow.say(params[:t] || "", 'say')
+  FortuneCow.say({ :text => params[:t] })
+end
+
+not_found do
+  FortuneCow.say({ :text => "404: Not found" })
 end

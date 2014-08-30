@@ -1,7 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    goldmine (1.0.0)
+    bitswitch (1.1.4)
+    gold_mine (1.0.0)
+      bitswitch (~> 1.1.4)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -16,6 +18,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  goldmine
+  gold_mine
   ruby_cowsay
   sinatra

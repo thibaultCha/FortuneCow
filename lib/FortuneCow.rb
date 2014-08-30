@@ -2,33 +2,41 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'ruby_cowsay'
+require 'gold_mine'
 
 class FortuneCow < Cow
-
-  DEFAULT_OPTS = {
-    'fortune' => false,
-    'random_cow' => false
-  }
 
   # ====================
   # = Instance Methods =
   # ====================
 
-  def initialize(options)
+  def initialize(options = {})
     options[:random_cow] ? options[:cow] = get_random_type : nil
     super(options)
+  end
+
+  def say_fortune
+    self.say(get_fortune)
   end
 
   # =================
   # = Class Methods =
   # =================
 
-  def self.say(options = DEFAULT_OPTS)
+  def self.say(options)
     FortuneCow.new(options).say(options[:text] || "")
   end
 
-  def self.think(options = DEFAULT_OPTS)
+  def self.think(options)
     FortuneCow.new(options).think(options[:text] || "")
+  end
+
+  def self.say_fortune(options)
+    FortuneCow.new(options).say_fortune
+  end
+
+  def self.random
+    FortuneCow.new({ :random_cow => true }).say_fortune
   end
 
   # ===================
@@ -39,6 +47,10 @@ class FortuneCow < Cow
 
   def get_random_type
     return FortuneCow.cows.sample
+  end
+
+  def get_fortune
+    return GoldMine::DB.new.random.content
   end
 
 end

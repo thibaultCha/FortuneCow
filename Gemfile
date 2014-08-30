@@ -4,4 +4,4 @@ ruby '2.0.0'
 
 gem 'sinatra'
 gem 'ruby_cowsay'
-gem 'goldmine'
+gem 'gold_mine'

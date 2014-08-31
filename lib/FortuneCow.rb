@@ -23,15 +23,15 @@ class FortuneCow < Cow
   # = Class Methods =
   # =================
 
-  def self.say(options)
+  def self.say(options = {})
     FortuneCow.new(options).say(options[:text] || "")
   end
 
-  def self.think(options)
+  def self.think(options = {})
     FortuneCow.new(options).think(options[:text] || "")
   end
 
-  def self.say_fortune(options)
+  def self.say_fortune(options = {})
     FortuneCow.new(options).say_fortune
   end
 

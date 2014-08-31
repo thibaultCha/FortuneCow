@@ -7,7 +7,9 @@ helpers do
   def serialize_params(params)
     {
       :text => params[:t],
-      :random_cow => params[:r].to_s != ""
+      :random_cow => params[:r].to_s != "",
+      :face_type => params[:face],
+      :cow => params[:cow]
     }
   end
 end
@@ -17,19 +19,27 @@ before do
 end
 
 get '/' do
-  FortuneCow.say_fortune
+  FortuneCow::say_fortune
 end
 
 get '/think' do
-  FortuneCow.think(serialize_params(params))
+  FortuneCow::think(serialize_params(params))
 end
 
 get '/say' do
-  FortuneCow.say(serialize_params(params))
+  FortuneCow::say(serialize_params(params))
 end
 
 get '/random' do
-  FortuneCow.random
+  FortuneCow::random
+end
+
+get '/cows' do
+  "#{FortuneCow::cows.join("\n")}"
+end
+
+get '/faces' do
+  "#{FortuneCow::faces.join("\n")}"
 end
 
 not_found do

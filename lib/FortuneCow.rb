@@ -1,8 +1,5 @@
-require 'rubygems'
-require 'bundler/setup'
-
-require 'ruby_cowsay'
-require 'gold_mine'
+# FortuneCow
+# author: thibaultcha
 
 class FortuneCow < Cow
 

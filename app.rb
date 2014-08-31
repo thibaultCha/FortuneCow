@@ -1,11 +1,6 @@
 # cowsay
 # author: thibaultcha
 
-require 'rubygems'
-require 'bundler'
-
-Bundler.require
-
 require './lib/FortuneCow.rb'
 
 before do

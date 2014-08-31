@@ -1,7 +1,7 @@
 # cowsay
 # author: thibaultcha
 
-require './lib/FortuneCow.rb'
+require_relative 'lib/FortuneCow.rb'
 
 before do
   content_type 'text/plain'

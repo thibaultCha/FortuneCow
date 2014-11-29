@@ -1,7 +1,7 @@
-# cowsay
+# Fortunecow
 # author: thibaultcha
 
-require_relative 'lib/FortuneCow.rb'
+require_relative 'lib/FortuneCow'
 
 helpers do
   def serialize_params(params)

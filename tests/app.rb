@@ -9,8 +9,8 @@ OUTER_APP = Rack::Builder.parse_file('config.ru').first
 class FortuneCowTests < Test::Unit::TestCase
   include Rack::Test::Methods
 
-  @@think = File.read("./tests/results/think")
-  @@say = File.read("./tests/results/say")
+  @@think = File.read("./tests/fixtures/think")
+  @@say = File.read("./tests/fixtures/say")
 
   def app
     OUTER_APP

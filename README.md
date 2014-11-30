@@ -1,7 +1,5 @@
 # FortuneCow
 
-[fortunecow.thibaultcha.me](http://fortunecow.thibaultcha.me)
-
 ```
 _______________________________________
 / For those who like this sort of       \
@@ -45,5 +43,5 @@ Starts locally on `http://localhost:9292`.
 ### Run the tests
 
 ```
-$ bundle exec ruby tests/app.rb
+$ bundle exec ruby spec/app.rb
 ```
